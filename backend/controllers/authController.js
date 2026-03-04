@@ -20,6 +20,8 @@ const sendTokenResponse = (user, statusCode, res) => {
     const options = {
         expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 din
         httpOnly: true, // JS se access nahi hoga
+        secure: true,       // ← HTTPS ke liye zaroori
+        sameSite: 'none',   // ← Cross-site cookies allow karo
     };
 
     // Step 3 – Password response mein mat bhejo
