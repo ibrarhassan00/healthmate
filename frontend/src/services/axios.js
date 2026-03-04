@@ -7,8 +7,10 @@ import axios from 'axios';
 // Yeh ek custom axios banata hai
 // Ab har request mein baseURL automatic lagegi
 const API = axios.create({
-    baseURL: 'http://localhost:5000/api', // Backend ka address
+    baseURL: import.meta.env.VITE_API_URL, // Backend ka address
     withCredentials: true,               // Cookie automatically jayegi har request mein
 });
 
 export default API;
+
+
